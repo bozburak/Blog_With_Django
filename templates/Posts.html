@@ -1,0 +1,28 @@
+{% extends 'Base.html' %}
+
+{% load static %}
+
+    {% block title %} Home Page - {{ block.super }} {% endblock %}
+
+    {% block body %}
+        <div id="anaindex"><!-- index start -->
+            <div class="ilk"><!-- first post start -->
+    {% for i in posts %}
+
+                <div class="img1" id="imgg1">
+                    <img src="{% static 'img/index/1.png' %}" alt="ilk resim">
+                </div>
+                <div class="baslık1">
+                    <a href="post/{{ i.id }}">{{ i.title }}</a>
+                </div>
+                <div class="yazı1">
+                    {{ i.content }}
+                </div>
+                <div class="git1">
+                    {{ i.publishing_date }}
+                </div>
+
+    {% endfor %}
+            </div><!-- first post finish -->
+        </div>
+    {% endblock %}
